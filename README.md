@@ -1,4 +1,4 @@
 # bootstrap-admin-dashboard
 full mobile friendly dashboard
 
-![Screenshot](screenshot.png)
+![Screenshot](images/screenshot.png)
