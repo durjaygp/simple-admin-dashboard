@@ -81,3 +81,14 @@ a {
     height: calc(100%- var(--topNavbarHeight)) !important; */
   }
 }
+
+.profile-details li {
+  display: inline-block;
+  list-style: none;
+  font-size: 17px;
+}
+
+.profile-details>.text-muted {
+  width: 120px;
+  text-align: end;
+}
