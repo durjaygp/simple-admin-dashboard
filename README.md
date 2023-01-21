@@ -11,8 +11,14 @@ Simple Admin Dashboard using Bootstrap 5
 ## All Student
 ![Screenshot](images/Screenshot_2.png)
 
+## Show Student
+![Screenshot](images/Screenshot_6.png)
+
 ## Departments
 ![Screenshot](images/Screenshot_3.png)
 
 ## Programs
 ![Screenshot](images/Screenshot_4.png)
+
+## Profile
+![Screenshot](images/Screenshot_6.png)
