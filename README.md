@@ -21,4 +21,4 @@ Simple Admin Dashboard using Bootstrap 5
 ![Screenshot](images/Screenshot_4.png)
 
 ## Profile
-![Screenshot](images/Screenshot_6.png)
+![Screenshot](images/Screenshot_5.png)
