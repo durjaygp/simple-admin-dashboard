@@ -5,13 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bootstrap Admin Panel</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
-    integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
 </head>
 
 <body>
@@ -53,20 +50,22 @@
         <a class="navbar-brand fw-bold" href="#">E-Student</a>
       </div>
     </div>
-    <div class="offcanvas-body p-0">
+    <div class="offcanvas-body pt-3 p-0">
       <nav class="navbar-dark">
-        <ul class="navbar-nav">
-          <li class="nav-link px-3 active">
+        <ul class="navbar-nav sidenav">
+          <li class="nav-link bordered px-3 active">
             <a href="#" class="nav-link px-3 active">
               <span class="me-2"><i class="bi bi-speedometer2"></i></span>
               <span>Dashboard</span>
             </a>
           </li>
-          <li class="nav-link px-3">
+          <li class="nav-link bordered px-3">
             <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button"
               aria-expanded="false" aria-controls="collapseExample">
-              <span class="me-2"><i class="bi bi-cup-hot-fill"></i></span>
-              <span>Collapse Menu</span>
+              <span class="me-2">
+                <i class="bi bi-people-fill"></i>
+              </span>
+              <span>Students</span>
               <span class="right-icon ms-auto">
                 <i class="bi bi-chevron-down"></i>
               </span>
@@ -77,18 +76,31 @@
                   <li>
                     <a href="" class="nav-link px-3">
                       <span class="me-2"><i class="bi bi-1-circle"></i></span>
-                      <span>Collapse Menu part</span>
+                      <span>Add Student</span>
                     </a>
                   </li>
                   <li>
                     <a href="" class="nav-link px-3">
                       <span class="me-2"><i class="bi bi-2-circle"></i></span>
-                      <span>Collapse Menu part 2</span>
+                      <span>All Students</span>
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
+          </li>
+          <li class="nav-link bordered px-3">
+            <a href="#" class="nav-link px-3">
+              <span class="me-2"><i class="bi bi-intersect"></i></span>
+              <span>Departments</span>
+            </a>
+          </li>
+
+          <li class="nav-link bordered px-3">
+            <a href="#" class="nav-link px-3">
+              <span class="me-2"><i class="bi bi-journal-text"></i></span>
+              <span>Program</span>
+            </a>
           </li>
         </ul>
       </nav>
@@ -97,26 +109,198 @@
   <!-- sidebar end -->
 
   <!-- main content -->
-  <main class="mt-5 pt-3">
+  <main class="mt-3 p-2">
     <div class="container">
-      <nav aria-label="breadcrumb">
+      <div class="page-title">
+        <div style="font-weight: 500;" class="fs-3">Dashboard</div>
+      </div>
+      <nav class="mt-2 mb-4" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
           <li class="breadcrumb-item active" aria-current="page">Library</li>
         </ol>
       </nav>
+
+      <div class="dashboard">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card px-4 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="fs-5 text-end">
+                  100
+                </div>
+                <div style="margin-top: -10px;" class="fs-3 text-start text-info">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <div style="margin-top: -40px;" class="fs-5 pt-4 text-end">
+                  Students
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card px-4 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="fs-5 text-end">
+                  100
+                </div>
+                <div style="margin-top: -10px;" class="fs-3 text-start text-warning">
+                  <i class="bi bi-intersect"></i>
+                </div>
+                <div style="margin-top: -40px;" class="fs-5 pt-4 text-end">
+                  Departments
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card px-4 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="fs-5 text-end">
+                  100
+                </div>
+                <div style="margin-top: -10px;" class="fs-3 text-start text-danger">
+                  <i class="bi bi-journal-text"></i>
+                </div>
+                <div style="margin-top: -40px;" class="fs-5 pt-4 text-end">
+                  Programs
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="latest-added mt-5">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <div class="page-title fs-5 fw-bold mb-4">
+              Latest Added
+            </div>
+            <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                  <th>Department</th>
+                  <th>Program</th>
+                  <th>Admission Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>201901002</td>
+                  <td>Arafat</td>
+                  <td>01789404345</td>
+                  <td>arafat@gmail.com</td>
+                  <td>CSE</td>
+                  <td>BSc</td>
+                  <td>12-12-12</td>
+                  <td>
+                    <a href="#" class="btn btn-sm btn-warning">
+                      <i class="bi bi-pencil-square"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-danger">
+                      <i class="bi bi-trash-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>201901002</td>
+                  <td>Arafat</td>
+                  <td>01789404345</td>
+                  <td>arafat@gmail.com</td>
+                  <td>CSE</td>
+                  <td>BSc</td>
+                  <td>12-12-12</td>
+                  <td>
+                    <a href="#" class="btn btn-sm btn-warning">
+                      <i class="bi bi-pencil-square"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-danger">
+                      <i class="bi bi-trash-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>201901002</td>
+                  <td>Arafat</td>
+                  <td>01789404345</td>
+                  <td>arafat@gmail.com</td>
+                  <td>CSE</td>
+                  <td>BSc</td>
+                  <td>12-12-12</td>
+                  <td>
+                    <a href="#" class="btn btn-sm btn-warning">
+                      <i class="bi bi-pencil-square"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-danger">
+                      <i class="bi bi-trash-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>201901002</td>
+                  <td>Arafat</td>
+                  <td>01789404345</td>
+                  <td>arafat@gmail.com</td>
+                  <td>CSE</td>
+                  <td>BSc</td>
+                  <td>12-12-12</td>
+                  <td>
+                    <a href="#" class="btn btn-sm btn-warning">
+                      <i class="bi bi-pencil-square"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-danger">
+                      <i class="bi bi-trash-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>201901002</td>
+                  <td>Arafat</td>
+                  <td>01789404345</td>
+                  <td>arafat@gmail.com</td>
+                  <td>CSE</td>
+                  <td>BSc</td>
+                  <td>12-12-12</td>
+                  <td>
+                    <a href="#" class="btn btn-sm btn-warning">
+                      <i class="bi bi-pencil-square"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-danger">
+                      <i class="bi bi-trash-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
-
   <!-- main content end-->
 
-
-
-
-
-
-
+  <script src="js/jquery-3.5.1.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <script src="js/dataTables.bootstrap5.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#datatable').DataTable({
+        paging: false,
+        info: true,
+        dom: 'Bfrtip',
+        select: true,
+        pageLength: 5,
+        recordsTotal: 10,
+      });
+    });
+  </script>
 </body>
 
 </html>
